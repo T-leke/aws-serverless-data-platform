@@ -22,6 +22,3 @@ output "state_machine_arn" {
   value = module.step_functions.state_machine_arn
 }
 
-output "glue_job_name" {
-  value = module.glue.glue_job_name
-}
