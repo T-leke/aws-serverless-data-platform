@@ -313,7 +313,7 @@ Additional documentation can be found in the `docs/` directory.
 
 ---
 
-# Learning Objectives
+# Learning Objective
 
 This project demonstrates understanding of:
 
