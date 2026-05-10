@@ -337,7 +337,7 @@ Example:
 ```text
 Lambda needs IAM role
 Step Functions needs Glue job
-Glue needs S3 buckets
+Glue needs S3 bucket
 ```
 
 Terraform determines deployment order automatically.
