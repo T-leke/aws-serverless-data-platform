@@ -195,7 +195,7 @@ HCP Terraform provides:
 | GitHub Actions | CI/CD automation |
 | TFLint | Terraform linting |
 | Checkov | Security scanning |
-| Terratest | Infrastructure testing |
+| Terratest configuration | Infrastructure testing |
 | Sentinel / OPA | Policy-as-code |
 | AWS OIDC Federation | Secure authentication |
 
