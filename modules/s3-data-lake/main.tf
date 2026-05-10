@@ -1,5 +1,5 @@
-resource "aws_s3_bucket" "source" {
-  bucket = "${var.project_name}-${var.environment}-source-${data.aws_caller_identity.current.account_id}"
+resource "aws_s3_bucket" "raw" {
+  bucket = "${var.project_name}-${var.environment}-raw-${data.aws_caller_identity.current.account_id}"
 }
 
 resource "aws_s3_bucket" "bronze" {
@@ -16,7 +16,7 @@ resource "aws_s3_bucket" "gold" {
 
 locals {
   buckets = {
-    source = aws_s3_bucket.source.id
+    raw    = aws_s3_bucket.raw.id
     bronze = aws_s3_bucket.bronze.id
     silver = aws_s3_bucket.silver.id
     gold   = aws_s3_bucket.gold.id
@@ -64,6 +64,10 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
   rule {
     id     = "expire-old-noncurrent-versions"
     status = "Enabled"
+
+    filter {
+      prefix = ""
+    }
 
     noncurrent_version_expiration {
       noncurrent_days = 30
