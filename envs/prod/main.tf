@@ -27,10 +27,10 @@ module "iam" {
 module "step_functions" {
   source = "../../modules/step-functions"
 
-  project_name  = var.project_name
-  environment   = var.environment
-  role_arn      = module.iam.stepfunctions_role_arn
-  glue_job_name = module.glue.glue_job_name
+  project_name = var.project_name
+  environment  = var.environment
+  role_arn     = module.iam.stepfunctions_role_arn
+
 }
 
 module "lambda_validator" {
