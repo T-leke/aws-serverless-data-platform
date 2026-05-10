@@ -1,13 +1,13 @@
-output "source_bucket_id" {
-  value = aws_s3_bucket.source.id
+output "raw_bucket_id" {
+  value = aws_s3_bucket.raw.id
 }
 
-output "source_bucket_name" {
-  value = aws_s3_bucket.source.bucket
+output "raw_bucket_name" {
+  value = aws_s3_bucket.raw.bucket
 }
 
-output "source_bucket_arn" {
-  value = aws_s3_bucket.source.arn
+output "raw_bucket_arn" {
+  value = aws_s3_bucket.raw.arn
 }
 
 output "bronze_bucket_name" {
