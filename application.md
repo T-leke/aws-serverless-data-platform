@@ -330,7 +330,7 @@ Glue
 Athena
 ```
 
-Terraform automatically builds a dependency graph.
+Terraform automatically builds a dependency graph
 
 Example:
 
