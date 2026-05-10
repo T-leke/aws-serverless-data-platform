@@ -1,0 +1,61 @@
+framework:
+  - terraform
+
+skip-check:
+
+  - CKV_AWS_18   # S3 access logging skipped for learning environment
+  - CKV_AWS_144   # Cross-region replication skipped for learning environment
+# =========================================================
+  # Lambda exceptions for learning/cost-controlled project
+  # =========================================================
+
+  - CKV_AWS_117   # Lambda inside VPC not required
+  - CKV_AWS_272   # Lambda code signing skipped
+  - CKV_AWS_116   # DLQ skipped for simplicity
+  - CKV_AWS_173   # Lambda KMS env var encryption skipped
+  - CKV_AWS_115   # Reserved concurrency limit skipped
+  - CKV_AWS_50    # Lambda X-Ray tracing skipped
+
+  # =========================================================
+  # S3 simplifications
+  # =========================================================
+
+  - CKV_AWS_145   # SSE-S3 used instead of KMS
+  - CKV2_AWS_62   # Only source bucket needs notifications
+  - CKV_AWS_300   # Multipart upload abort lifecycle skipped
+
+  # =========================================================
+  # Networking simplifications
+  # =========================================================
+
+  - CKV_AWS_130   # Public subnet auto public IP intentional
+  - CKV2_AWS_11   # VPC Flow Logs skipped to reduce cost
+
+  # =========================================================
+  # Logging/KMS simplifications
+  # =========================================================
+
+  - CKV_AWS_158   # CloudWatch KMS encryption skipped
+  - CKV_AWS_338   # 1-year retention unnecessary for dev
+  - CKV_AWS_26    # SNS encryption skipped for learning
+
+  # =========================================================
+  # IAM policy flexibility for learning
+  # =========================================================
+
+  - CKV_AWS_355   # Wildcard resources temporarily allowed
+  - CKV_AWS_290   # Broad write permissions temporarily allowed
+  - CKV_AWS_289   # IAM permissions management allowed
+  - CKV_AWS_286   # Privilege escalation checks skipped
+
+  # =========================================================
+  # Glue simplifications
+  # =========================================================
+
+  - CKV_AWS_99    # Glue encryption hardening skipped
+
+quiet: true
+compact: true
+
+
+

@@ -1,5 +1,5 @@
-output "source_bucket_name" {
-  value = module.s3_data_lake.source_bucket_name
+output "raw_bucket_name" {
+  value = module.s3_data_lake.raw_bucket_name
 }
 
 output "bronze_bucket_name" {
