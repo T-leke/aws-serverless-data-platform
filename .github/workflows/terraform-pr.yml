@@ -47,7 +47,7 @@ jobs:
         run: tflint --init --config ../../.tflint.hcl
 
       - name: TFLint run
-        run: tflint --recursive --config ../../.tflint.hcl ../..
+        run: tflint --recursive --config .tflint.hcl
 
       - name: Run Checkov
         uses: bridgecrewio/checkov-action@v12
