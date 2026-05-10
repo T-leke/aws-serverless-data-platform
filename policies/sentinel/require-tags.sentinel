@@ -1,0 +1,22 @@
+import "tfplan/v2" as tfplan
+
+required_tags = [
+  "Project",
+  "Environment",
+  "ManagedBy",
+  "Owner"
+]
+
+main = rule {
+  all tfplan.resource_changes as _, rc {
+    rc.mode is "managed" implies has_required_tags(rc)
+  }
+}
+
+has_required_tags = func(rc) {
+  tags = rc.change.after.tags else {}
+
+  all required_tags as tag {
+    tags contains tag
+  }
+}
