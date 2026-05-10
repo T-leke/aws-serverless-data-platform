@@ -338,4 +338,4 @@ Some configurations prioritize:
 - Simplicity
 - Educational clarity
 
-rather than full enterprise-scale production hardening.
+rather than full enterprise-scale production hardening
